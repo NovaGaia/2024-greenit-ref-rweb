@@ -1,22 +1,22 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-  "name": "GreenIT Refs site (TinaCMS, Astro, Node.js)",
+  "name": "GreenIT Ref RWEB site (TinaCMS, Astro, Node.js)",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/2024-greenit-refs,type=bind,consistency=cached",
-  "workspaceFolder": "/2024-greenit-refs",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/2024-greenit-ref-rweb,type=bind,consistency=cached",
+  "workspaceFolder": "/2024-greenit-ref-rweb",
   "waitFor": "onCreateCommand",
   "updateContentCommand": {
     "chown node_modules": "sudo chown -R node:node node_modules",
-    "npm install": "npm install",
+    "npm install": "npm install"
   },
   // "postAttachCommand": "pnpm dev",
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     // "ghcr.io/devcontainers-contrib/features/pnpm:2": {},
-    "ghcr.io/rio/features/chezmoi:1": {},
+    "ghcr.io/rio/features/chezmoi:1": {}
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -27,7 +27,7 @@
     ".nvmrc": "echo $(node --version) > .nvmrc",
     ".npmrc": "echo package-import-method=clone-or-copy > .npmrc",
     "git config --global core.autocrlf true": "git config --global core.autocrlf true",
-    "prettier": "npm i -g prettier",
+    "prettier": "npm i -g prettier"
   },
 
   // Configure tool-specific properties.
@@ -43,7 +43,7 @@
         "astro-build.astro-vscode",
         "WallabyJs.console-ninja",
         "ChakrounAnas.turbo-console-log",
-        "kamikillerto.vscode-colorize",
+        "kamikillerto.vscode-colorize"
       ],
       "settings": {
         "tailwindCSS.rootFontSize": 16,
@@ -51,7 +51,7 @@
           "class",
           "className",
           "classes",
-          ".*Classes.*",
+          ".*Classes.*"
         ],
         "tailwindCSS.experimental.classRegex": [
           ["Classes \\=([^;]*);", "'([^']*)'"],
@@ -59,12 +59,12 @@
           ["Classes \\=([^;]*);", "\\`([^\\`]*)\\`"],
           "[a-zA-Z]+Class\\s?[=:]\\s?[\"']([^\"^']+)",
           "[a-zA-Z]+ClassName=\"([^\"]*)\"",
-          "[a-zA-Z]+Class=\"([^\"]*)\"",
+          "[a-zA-Z]+Class=\"([^\"]*)\""
         ],
         "prettier.prettierPath": "/usr/local/share/npm-global/lib/node_modules/prettier/index.cjs",
         "prettier.documentSelectors": ["**/*.astro"],
         "[astro]": {
-          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
         "colorize.include": [
           "**/*.js",
@@ -73,22 +73,19 @@
           "**/*.tsx",
           "**/*.mjs",
           "**/*.css",
-          "**/*.astro",
-        ],
-        // GreenIT Refs website ID Project :
-        // https://track.toggl.com/7917687/projects/198767837/dashboard
-        "toggl.defaultProjectId": 198767837,
-      },
-    },
+          "**/*.astro"
+        ]
+      }
+    }
   },
   "portsAttributes": {
     "4001": {
-      "label": "Tina API",
+      "label": "Tina API"
     },
     "4321": {
-      "label": "Astro",
-    },
-  },
+      "label": "Astro"
+    }
+  }
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
