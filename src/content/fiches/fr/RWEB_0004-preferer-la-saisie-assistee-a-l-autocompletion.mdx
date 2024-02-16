@@ -1,25 +1,26 @@
 ---
-refID: "0004"
+refID: '0004'
 title: Préférer la saisie assistée à l'autocomplétion
 createdAt: 2024-02-14T09:20:22.612Z
-updatedAt: 2024-02-14T09:23:12.577Z
+updatedAt: 2024-02-16T08:32:50.601Z
 language: fr
 published: true
 refType: RWEB
 versions:
   - version: GreenIT
-    idRef: "204"
+    idRef: '204'
   - version: 2.0.0
-    idRef: "0004"
+    idRef: '0004'
   - version: 3.0.0
-    idRef: "0004"
+    idRef: '0004'
   - version: 4.0.0
-    idRef: "0004"
+    idRef: '0004'
 people: TBD
 responsible:
   - responsible: src/content/personas/fr/poamoa.mdx
 lifecycle: 1-analyse-of-needs
 environmental_impact: 3
+priority_implementation: 3
 moe: 3
 tiers: user-device
 saved_resources:
@@ -41,10 +42,10 @@ résultats correspondants. On peut donc avoir beaucoup de requêtes effectuées 
 Dans la mesure du possible, cette fonctionnalité est à remplacer par la saisie assistée.
 Cela consiste à guider l’utilisateur par un ensemble d’informations et d’indices :
 
-- Présentation du format attendu en grisé dans le champ de saisie (`placeholder`)
-- Texte expliquant le format attendu
-- Réaction de l’interface avec un message d’erreur ou un changement de couleur et aide textuelle lorsque la saisie est incorrecte
-- etc.
+* Présentation du format attendu en grisé dans le champ de saisie (`placeholder`)
+* Texte expliquant le format attendu
+* Réaction de l’interface avec un message d’erreur ou un changement de couleur et aide textuelle lorsque la saisie est incorrecte
+* etc.
 
 Les interactions liées à la saisie assistée sont gérées localement, ce qui réduit les échanges avec le serveur.
 
@@ -55,12 +56,12 @@ soumet le formulaire, et se voit à ce moment proposées différentes options : 
 
 Si le recours à l'autocomplétion ne peut pas être évité il est possible de minimiser le nombre de requêtes avec des optimisations simples :
 
-- Ajouter un délai de quelque dixièmes de secondes entre l'ajout d'un caractère et la requête : cela permet de ne pas déclencher de requête si l'utilisateur n'a pas terminé sa saisie.
-- Limiter le nombre de résultats affichés par l'autocomplétion, priorisés par une note de pertinence
-- Fixer un nombre de caractères minimal avant de chercher à compléter.
-- Si la taille de la base de données le permet, l'inclure dans le code html ou dans le `local storage` et effectuer l'autocomplétion côté client.
-- Mettre en cache les résultats des recherches avec pour clef la chaîne saisie pour moins solliciter la base de données.
-- Contextualiser les résultats pour en limiter le nombre.
+* Ajouter un délai de quelque dixièmes de secondes entre l'ajout d'un caractère et la requête : cela permet de ne pas déclencher de requête si l'utilisateur n'a pas terminé sa saisie.
+* Limiter le nombre de résultats affichés par l'autocomplétion, priorisés par une note de pertinence
+* Fixer un nombre de caractères minimal avant de chercher à compléter.
+* Si la taille de la base de données le permet, l'inclure dans le code html ou dans le `local storage` et effectuer l'autocomplétion côté client.
+* Mettre en cache les résultats des recherches avec pour clef la chaîne saisie pour moins solliciter la base de données.
+* Contextualiser les résultats pour en limiter le nombre.
 
 ## Exemple
 
