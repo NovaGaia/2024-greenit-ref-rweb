@@ -1,5 +1,6 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import type { EntryType } from "perf_hooks";
+import { getRefConfig } from "referentiel-config";
 
 export async function GET({ params, request }) {
   const id = params.id;
@@ -14,14 +15,17 @@ export async function GET({ params, request }) {
   }
   const entry = filteredEntries[0];
   const [_lang, ...slug] = entry.slug.split("/");
-  return new Response(
-    JSON.stringify({
-      id: id,
-      lang: lang,
-      title: entry.data.title,
-      slug: `/${import.meta.env.PUBLIC_BASE !== "" ? import.meta.env.PUBLIC_BASE + "/" : ""}fr/${entry.collection}/${slug}`,
-    }),
-  );
+  let o = {
+    id: entry.data.refID,
+    lang: lang,
+    title: entry.data.title,
+    lifecycle: entry.data.lifecycle,
+    slug: `/${import.meta.env.PUBLIC_BASE !== "" ? import.meta.env.PUBLIC_BASE + "/" : ""}fr/${entry.collection}/${slug}`,
+  };
+  if (getRefConfig().featuresEnabled.scope) {
+    o["scope"] = entry.data.scope;
+  }
+  return new Response(JSON.stringify(o));
 }
 
 export async function getStaticPaths() {
