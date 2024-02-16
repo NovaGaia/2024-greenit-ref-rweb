@@ -33,7 +33,8 @@ export const GET: APIRoute = async ({ params, request }) => {
   return new Response(JSON.stringify(output), {
     status: 200,
     headers: {
-      "content-type": "application/json;charset=UTF-8",
+      "Content-type": "application/json;charset=UTF-8",
+      Charset: "UTF-8",
     },
   });
 };
