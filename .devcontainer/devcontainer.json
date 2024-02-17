@@ -28,6 +28,7 @@
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": {
     ".nvmrc": "echo $(node --version) > .nvmrc",
+    ".nvmrc docs": "echo $(node --version) > ./docs/.nvmrc",
     ".npmrc": "echo package-import-method=clone-or-copy > .npmrc",
     "prettier": "npm i -g prettier"
   },
