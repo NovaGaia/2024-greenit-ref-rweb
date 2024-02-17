@@ -1,0 +1,32 @@
+input: .
+favicon: static/greenit_icone_intro-alt.png
+url: https://novagaia.github.io/2024-greenit-ref-rweb
+branding:
+  title: REFGEN Green IT
+  logo: static/greenit_icone_intro-alt.png
+  label: 4.0.0
+meta:
+  title: " - REFGEN Green IT"
+links:
+  - text: Association GreenIT
+    link: https://asso.greenit.fr/
+    target: blank
+    icon: organization
+  - text: Ecoindex
+    link: https://www.ecoindex.fr/
+    target: blank
+    icon: info
+  - text: GitHub
+    link: https://github.com/cnumr/best-practices#readme
+    target: blank
+    icon: mark-github
+footer:
+  copyright: "&copy; Copyright 2012 - {{ year }}. All rights reserved to GreenIT.fr."
+  links:
+    - text: License
+      link: ./licence.md
+      icon: shield
+    - text: Association GreenIT.fr
+      link: https://asso.greenit.fr/
+      target: blank
+      icon: organization
