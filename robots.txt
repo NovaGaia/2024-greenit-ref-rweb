@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://novagaia.github.io/2024-greenit-ref-rweb/sitemap.xml.gz
