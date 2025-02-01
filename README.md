@@ -8,6 +8,7 @@
 
 Ce projet est un template de site pour gérer les référentiels du collectif.
 
+
 Il utilise cette stack :
 
 - [Astro](https://astro.build/)
